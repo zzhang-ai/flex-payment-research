@@ -1,5 +1,7 @@
 import Comments from "./comments";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 function Badge({ children, color }: { children: React.ReactNode; color: string }) {
   const colors: Record<string, string> = {
     cherry: "bg-cherry-light text-cherry-dark",
@@ -125,7 +127,7 @@ export default function Page() {
         </p>
         <div className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4">
           <img
-            src="/current-experience.png"
+            src={`${BASE}/current-experience.png`}
             alt="Current payment flow: Payment Plan Details → Make a Payment → Recurring Payment option hidden inside payment flow"
             className="w-full rounded-lg"
           />
@@ -385,7 +387,7 @@ export default function Page() {
         </p>
         <div className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50 p-4">
           <img
-            src="/design-proposal.png"
+            src={`${BASE}/design-proposal.png`}
             alt="Design proposal: Non-delinquent flow shows Payment Plan with Pay Early and Change AutoPay Settings leading to a unified AutoPay Settings screen with frequency options and payment details. Delinquent flow shows Payment Past Due banner with Pay Now and Schedule Catch-Up Payments leading to structured catch-up options."
             className="w-full rounded-lg"
           />
